@@ -1,0 +1,7 @@
+text8
+text8.zip
+*.npy
+vocab.txt
+__pycache__
+.DS_Store
+*.pyc
