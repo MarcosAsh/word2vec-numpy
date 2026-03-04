@@ -51,7 +51,7 @@ def build_vocab(tokens, min_count=5):
         Maps word → raw count (only for words in vocab).
     """
     raw_counts = Counter(tokens)
-    # Sort by frequency descending — most common word gets index 0
+    # Sort by frequency descending - most common word gets index 0
     sorted_words = sorted(
         [w for w, c in raw_counts.items() if c >= min_count],
         key=lambda w: raw_counts[w],

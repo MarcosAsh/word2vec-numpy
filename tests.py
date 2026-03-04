@@ -21,7 +21,7 @@ from model import Word2Vec, sigmoid
 # ---------------------------------------------------------------------------
 
 def compute_loss(W_in, W_out, centre_idx, context_idx, neg_indices):
-    """Pure function — computes SGNS loss from weight matrices."""
+    """Pure function - computes SGNS loss from weight matrices."""
     u_c = W_in[centre_idx]
     v_o = W_out[context_idx]
     V_n = W_out[neg_indices]
@@ -195,8 +195,8 @@ def test_build_vocab():
     tokens = "the cat sat on the mat the cat the dog".split()
     w2i, i2w, counts = build_vocab(tokens, min_count=2)
 
-    # "the" appears 4x, "cat" 2x — both should be in vocab
-    # "sat", "on", "mat", "dog" appear 1x — should be filtered out
+    # "the" appears 4x, "cat" 2x - both should be in vocab
+    # "sat", "on", "mat", "dog" appear 1x - should be filtered out
     assert "the" in w2i, "'the' missing from vocab"
     assert "cat" in w2i, "'cat' missing from vocab"
     assert "sat" not in w2i, "'sat' should be filtered (count=1)"

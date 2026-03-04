@@ -1,6 +1,6 @@
-# word2vec from scratch — pure NumPy
+# word2vec from scratch, pure NumPy
 
-A complete implementation of **Word2Vec Skip-Gram with Negative Sampling (SGNS)** using only NumPy. No PyTorch, TensorFlow, or any ML framework — just matrix operations and SGD.
+A complete implementation of **Word2Vec Skip-Gram with Negative Sampling (SGNS)** using only NumPy. No PyTorch, TensorFlow, or any ML framework. Just matrix operations and SGD.
 
 Trained on the [text8](http://mattmahoney.net/dc/text8.zip) corpus (~17M tokens of cleaned Wikipedia text).
 

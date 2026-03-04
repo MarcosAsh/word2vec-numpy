@@ -1,5 +1,5 @@
 """
-Word2Vec Skip-Gram with Negative Sampling (SGNS) — pure NumPy.
+Word2Vec Skip-Gram with Negative Sampling (SGNS) - pure NumPy.
 
 Gradient derivations
 ====================
@@ -52,7 +52,7 @@ class Word2Vec:
     """
 
     def __init__(self, vocab_size, embed_dim):
-        # Uniform init in [-0.5/d, 0.5/d] — keeps initial dot products small
+        # Uniform init in [-0.5/d, 0.5/d] - keeps initial dot products small
         bound = 0.5 / embed_dim
         self.W_in = np.random.uniform(-bound, bound,
                                       (vocab_size, embed_dim))   # centre word embeddings
@@ -86,8 +86,8 @@ class Word2Vec:
         s_o = np.dot(v_o, u_c)              # positive score (scalar)
         s_n = V_n @ u_c                     # negative scores, shape (K,)
 
-        sig_o = sigmoid(s_o)                 # σ(s_o) — want this close to 1
-        sig_n = sigmoid(s_n)                 # σ(s_k) — want these close to 0
+        sig_o = sigmoid(s_o)                 # σ(s_o) - want this close to 1
+        sig_n = sigmoid(s_n)                 # σ(s_k) - want these close to 0
 
         # --- Loss: -log σ(s_o) - Σ log σ(-s_k) ---
         loss = -np.log(sig_o + 1e-10) - np.sum(np.log(1.0 - sig_n + 1e-10))
