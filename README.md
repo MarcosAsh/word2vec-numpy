@@ -12,11 +12,13 @@ Trained on the [text8](http://mattmahoney.net/dc/text8.zip) corpus (~17M tokens 
 | `data.py` | Downloads text8, builds vocabulary, subsamples frequent words, creates noise distribution |
 | `train.py` | Training loop with linear LR decay, dynamic windowing, negative sampling |
 | `eval.py` | Nearest-neighbour search and word analogy evaluation (3CosAdd) |
+| `tests.py` | Finite-difference gradient checking and unit tests |
 
 ## Quickstart
 
 ```bash
-pip install numpy tqdm
+pip install -r requirements.txt
+python tests.py   # gradient check + unit tests (~instant)
 python train.py   # downloads text8, trains 1 epoch (~30-60 min on CPU)
 python eval.py    # nearest neighbours + analogy evaluation
 ```
